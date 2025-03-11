@@ -1,0 +1,77 @@
+<div class="container">
+  <h2 class="text-center">Challenges</h2>
+  
+  <ng-container *ngIf="challenges.length; else noData">
+    <table>
+      <thead>
+        <tr>
+          <th>Challenge ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Enroll</th>
+          <th *ngIf="userRole === 'ROLE_ADMIN'">Lists</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let challenge of challenges">
+          <td>{{ challenge.challengeId }}</td>
+          <td>{{ challenge.challengeName }}</td>
+          <td>{{ challenge.description }}</td>
+          <td>{{ challenge.challengeStartDate | date }}</td>
+          <td>{{ challenge.challengeEndDate | date }}</td>
+          <td>
+            <button mat-button (click)="handleEnroll(challenge)">
+              Enroll
+            </button></td>
+            <td> <button 
+            mat-button *ngIf="userRole === 'ROLE_ADMIN'"
+            (click)="challenge.challengeId ? viewEnrolledEmployees(challenge.challengeId) : null">
+            View Enrolled Employees
+          </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  
+  <ng-template #noData>
+    <p class="text-center">No challenges available</p>
+  </ng-template>
+
+  <!-- Section to display enrolled employees based on the flag -->
+  <ng-container *ngIf="showEmployeeList">
+    <h3 class="text-center">Enrolled Employees for Challenge ID {{ selectedChallengeId }}</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>Contact Number</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Bloodgroup</th>
+          <th>BMI</th>
+          <th>Hobbies</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of selectedChallengeEmployees">
+          <td>{{ employee.employeeId }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.contactNumber }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.age }}</td>
+          <td>{{ employee.gender }}</td>
+          <td>{{ employee.bloodgroup }}</td>
+          <td>{{ employee.bmi }}</td>
+          <td>{{ employee.hobbies }}</td>
+          <td>{{ employee.department }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</div>

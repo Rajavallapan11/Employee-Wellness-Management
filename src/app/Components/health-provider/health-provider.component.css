@@ -1,0 +1,68 @@
+/* Apply some custom styles to the table */
+.table {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Style for table headers */
+.table thead th {
+    background-color: #343a40;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hover effect for table rows */
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Zebra striping for rows */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Border radius for table cells */
+.table td, .table th {
+    border-radius: 0.5rem;
+}
+
+/* Padding inside table cells */
+.table td, .table th {
+    padding: 1rem;
+}
+
+/* Add some shadow effect to the table */
+.table {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .table thead {
+        display: none;
+    }
+
+    .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        margin-bottom: 1.5rem;
+        font-size: 0.875rem;
+        background-color: #f9f9f9;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 0.5rem;
+        font-weight: bold;
+        background-color: #f9f9f9;
+    }
+}

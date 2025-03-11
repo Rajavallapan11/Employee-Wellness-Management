@@ -1,0 +1,28 @@
+<div class="container-fluid d-flex flex-column vh-100">
+  <div class="row flex-grow-1">
+    <!-- Sidebar Section -->
+    <div class="col-md-2 bg-light border-end">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="col-md-10 d-flex flex-column">
+      <!-- Navbar at the top of main content -->
+      <div class="navbar-container">
+        <app-navbar class="border-bottom"></app-navbar>
+      </div>
+
+      <!-- Main content area -->
+      <div class="content flex-grow-1 mt-3 p-4">
+        <div class="calendar-container border rounded shadow-sm p-3 bg-white">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+      <!-- Footer at the bottom of the page -->
+      <div class="footer-container mt-auto">
+        <app-footer class="border-top p-2 bg-light text-center"></app-footer>
+      </div>
+    </div>
+  </div>
+</div>

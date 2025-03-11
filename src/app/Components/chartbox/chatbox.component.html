@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h3>Footsteps</h3>
+  <p class="text-muted">
+    Total Footsteps Tracking
+  </p>
+
+  <!-- Button group to switch between views (Today, Week, Month, Year) -->
+  <div class="d-flex justify-content-end mb-3">
+    <div class="btn-group">
+      <button class="btn btn-outline-primary" (click)="updateChart('today')">Today</button>
+      <button class="btn btn-outline-primary" (click)="updateChart('week')">Week</button>
+      <button class="btn btn-primary" (click)="updateChart('month')">Month</button>
+      <button class="btn btn-outline-primary" (click)="updateChart('year')">Year</button>
+    </div>
+  </div>
+
+  <!-- Chart Canvas -->
+  <canvas id="revenueChart"></canvas>
+</div>

@@ -1,0 +1,49 @@
+<div class="sidebar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="sidebarMenu">
+            <ul class="navbar-nav flex-column">
+                <li class="nav-item"  *ngIf="userRole === 'ROLE_USER'">
+                    <a href="javascript:void(0);" routerLink="/dashboard" class="text-decoration-none nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item"  *ngIf="userRole === 'ROLE_ADMIN'">
+                    <a href="javascript:void(0);" routerLink="/admin_dashboard" class="text-decoration-none nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" routerLink="/health" class="text-decoration-none nav-link">Health Providers</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a href="javascript:void(0);" routerLink="/chart" class="text-decoration-none nav-link">Chart Box</a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" routerLink="/wellness" class="text-decoration-none nav-link">Wellness Program</a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" routerLink="/events" class="text-decoration-none nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" routerLink="/challenges" class="text-decoration-none nav-link">Challenges</a>
+                </li>
+                <li class="nav-item" *ngIf="userRole === 'ROLE_ADMIN'">
+                    <a href="javascript:void(0);" routerLink="/emplist" class="text-decoration-none nav-link">Employee List</a>
+                  </li>
+                  <li class="nav-item dropdown" *ngIf="userRole === 'ROLE_ADMIN'">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Manage
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="/manage-wellness">Wellness Program</a></li>
+                      <li><a class="dropdown-item" routerLink="/manage-events">Events</a></li>
+                      <li><a class="dropdown-item" routerLink="/manage-challenge">Challenges</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0);" routerLink="/details" class="text-decoration-none nav-link">Employee Details</a>
+                  </li>
+                              </ul>
+        </div>
+    </nav>
+</div>

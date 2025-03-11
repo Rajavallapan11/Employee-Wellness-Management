@@ -1,0 +1,52 @@
+/* Styling for the modal header */
+.modal-header {
+    text-align: center;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6; /* Border for separation */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  /* Styling for the modal body */
+  .modal-body {
+    padding: 20px;
+  }
+  
+  /* Ensure form fields take full width */
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Styling for the modal footer */
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #f8f9fa; /* Bootstrap light background color */
+    border-top: 1px solid #dee2e6; /* Border for separation */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  /* Styling for buttons */
+  .btn-primary {
+    background-color: #fffb00; /* Bootstrap primary button color */
+    border: none;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Bootstrap secondary button color */
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker primary button color on hover */
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268; /* Darker secondary button color on hover */
+  }
+  

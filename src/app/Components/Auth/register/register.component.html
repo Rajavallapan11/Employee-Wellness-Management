@@ -1,0 +1,165 @@
+<body>
+  <div class=" register-container mt-5">
+    <div class="shadow-lg p-4 rounded">
+      <h2 class="text-center mb-4">Employee Registration</h2>
+  
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- Success Message -->
+        <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+  
+        <!-- Error Message -->
+        <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  
+        <div class="row">
+          <!-- Name -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" formControlName="name" class="form-control" placeholder="Enter full name" />
+              <div *ngIf="submitted && formControls['name'].errors" class="text-danger mt-1">
+                Name is required.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Email -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter email address" />
+              <div *ngIf="submitted && formControls['email'].errors" class="text-danger mt-1">
+                Valid email is required.
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <!-- Password -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter password" />
+              <div *ngIf="submitted && formControls['password'].errors" class="text-danger mt-1">
+                Password (min 6 characters) is required.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Age -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="age" class="form-label">Age</label>
+              <input type="number" id="age" formControlName="age" class="form-control" placeholder="Enter age" />
+              <div *ngIf="submitted && formControls['age'].errors" class="text-danger mt-1">
+                Age is required.
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <!-- Gender -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="gender" class="form-label">Gender</label>
+              <select id="gender" formControlName="gender" class="form-select">
+                <option value="">Select Gender</option>
+                <option value="MALE">Male</option>
+                <option value="FEMALE">Female</option>
+              </select>
+              <div *ngIf="submitted && formControls['gender'].errors" class="text-danger mt-1">
+                Gender is required.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Blood Group -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="bloodgroup" class="form-label">Blood Group</label>
+              <input type="text" id="bloodgroup" formControlName="bloodgroup" class="form-control" placeholder="Enter blood group" />
+              <div *ngIf="submitted && formControls['bloodgroup'].errors" class="text-danger mt-1">
+                Blood group is required.
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <!-- BMI -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="bmi" class="form-label">BMI</label>
+              <input type="text" id="bmi" formControlName="bmi" class="form-control" placeholder="Enter BMI" />
+              <div *ngIf="submitted && formControls['bmi'].errors" class="text-danger mt-1">
+                BMI is required.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Contact -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="contact" class="form-label">Contact Number</label>
+              <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control" placeholder="Enter contact number" />
+              <div *ngIf="submitted && formControls['contact'].errors" class="text-danger mt-1">
+                Contact number is required.
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <!-- Hobbies -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="hobbies" class="form-label">Hobbies</label>
+              <input type="text" id="hobbies" formControlName="hobbies" class="form-control" placeholder="Enter your hobbies" />
+              <div *ngIf="submitted && formControls['hobbies'].errors" class="text-danger mt-1">
+                Hobbies are required.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Department -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="department" class="form-label">Department</label>
+              <input type="text" id="department" formControlName="department" class="form-control" placeholder="Enter department" />
+              <div *ngIf="submitted && formControls['department'].errors" class="text-danger mt-1">
+                Department is required.
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <!-- Role -->
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="role" class="form-label">Role</label>
+              <select id="role" formControlName="role" class="form-select">
+                <option value="">Select Role</option>
+                <option value="ROLE_USER">Employee</option>
+                <option value="ROLE_ADMIN">Admin</option>
+              </select>
+              <div *ngIf="submitted && formControls['role'].errors" class="text-danger mt-1">
+                Role is required.
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100 mb-3">Register</button>
+        <div class="text-center">
+          <a href="javascript:void(0);" routerLink="/" class="text-decoration-none">
+           <b>Go to Login</b>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  </body>
+  

@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Enroll in Program</h1>
+<div mat-dialog-content class="dialog-content">
+  <div class="dialog-container">
+    <div class="dialog-image">
+      <img src="../../../assets/entrollpopupimg.png" alt="Enrollment Image">
+    </div>
+    <div class="dialog-text">
+      <p>Are you sure you want to enroll in <strong>{{ data.programName }}</strong>?</p>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="btn btn-danger me-2" (click)="onNoClick()">No</button>
+  <button mat-button class="btn btn-secondary" color="primary" (click)="enroll()">Yes</button>
+</div>

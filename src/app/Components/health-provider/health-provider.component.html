@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Health Providers</h2>
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Specialty</th>
+                <th>Location</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let provider of providers">
+                <td>{{ provider.name }}</td>
+                <td>{{ provider.type }}</td>
+                <td>{{ provider.specialty }}</td>
+                <td>{{ provider.location }}</td>
+                <td>{{ provider.Contact }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

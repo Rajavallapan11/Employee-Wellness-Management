@@ -1,0 +1,35 @@
+<div class="enrollment-container" *ngIf="!isLoading; else loading">
+  <h2>All Employee Enrollments</h2>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  
+  <table mat-table [dataSource]="enrollments" class="mat-elevation-z8">
+    <!-- Employee ID Column -->
+    <ng-container matColumnDef="employeeId">
+      <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+      <td mat-cell *matCellDef="let element"> {{ element.employeeId }} </td>
+    </ng-container>
+
+    <!-- Program Name Column -->
+    <ng-container matColumnDef="programName">
+      <th mat-header-cell *matHeaderCellDef> Program Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.programName }} </td>
+    </ng-container>
+
+    <!-- Enrollment Date Column -->
+    <ng-container matColumnDef="enrollmentDate">
+      <th mat-header-cell *matHeaderCellDef> Enrollment Date </th>
+      <td mat-cell *matCellDef="let element"> {{ element.enrollmentDate | date }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['employeeId', 'programName', 'enrollmentDate']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['employeeId', 'programName', 'enrollmentDate'];"></tr>
+  </table>
+</div>
+
+<!-- Loading Spinner -->
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+  <p>Loading enrollments...</p>
+</ng-template>

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Events List</h2>
+    <button mat-raised-button color="primary" class="btn btn-primary btn-mm shadow" (click)="openAddEventDialog()">Add Event</button>
+    <table class="table table-bordered mt-3">
+      <thead class="thead-dark">
+        <tr>
+          <th>Event Name</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Host</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events">
+          <td>{{ event.eventName }}</td>
+          <td>{{ event.description }}</td>
+          <td>{{ event.eventType }}</td>
+          <td>{{ event.eventDate | date }}</td>
+          <td>{{ event.hostName }}</td>
+          <td>{{ event.eventStatus }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="openEditEventDialog(event)">
+              Edit
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteEvent(event.eventId)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

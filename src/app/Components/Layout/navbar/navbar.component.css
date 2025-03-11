@@ -1,0 +1,70 @@
+/* General Navbar Styling */
+
+.navbar {
+    background-color: #343a40 !important;  
+    box-shadow: 0 2px 4px #cbee081a;
+    color: #fafafa;
+  }
+  
+  #titles{
+        color: #fafafa !important;
+      
+  }
+  .user-image {
+    width: 40px;   /* Width of the image */
+    height: 40px;  /* Height of the image */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: contain;  /* Ensure the image maintains its aspect ratio */
+  }
+
+  /* Input Search Styling */
+  .form-control {
+    width: 250px;
+    border-radius: 25px; /* Rounded corners */
+    transition: width 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Expand search input on focus */
+  .form-control:focus {
+    width: 300px;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Dropdown Menu Styling */
+  .dropdown-menu {
+    border-radius: 0.375rem;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Notification Badge for Icons */
+  .nav-link .badge {
+    font-size: 0.75rem;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+  }
+  
+  /* Align icons better */
+  .nav-link i {
+    font-size: 1.25rem;
+    color: #fafafa;
+  }
+  
+  /* Hover effect for icons */
+  .nav-link:hover i {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  /* Navbar spacing adjustments */
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .nav-item {
+    margin-left: 20px;
+  }
+  
+  

@@ -1,0 +1,63 @@
+<div class="containers">
+  <div
+    class="login-container mt-5 d-flex justify-content-center align-items-center"
+    style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);"
+  >
+    <div class="card shadow-lg p-4" style="width: 400px; position: relative; top: -30px; left: -350px;">
+      <h3 class="text-center mb-4">Login</h3>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Username -->
+        <div class="form-group mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="text"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="Enter your email"
+          />
+          <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger mt-1">
+            <small *ngIf="loginForm.get('email')?.errors?.['required']">
+              Email is required.
+            </small>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter your password"
+          />
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger mt-1">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']">
+              Password is required.
+            </small>
+            <small *ngIf="loginForm.get('password')?.errors?.['minlength']">
+              Password must be at least 6 characters long.
+            </small>
+          </div>
+        </div>
+
+        <!-- Error Message -->
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100 mb-3" [disabled]="loginForm.invalid">Login</button>
+
+        <div class="text-center">
+          <a href="javascript:void(0);" routerLink="/register" class="text-decoration-none">
+            <i class="fa fa-user-plus"></i> Go to Signup
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

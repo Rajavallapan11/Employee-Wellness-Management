@@ -1,0 +1,80 @@
+<!-- wellness-programs.component.html -->
+
+<div class="container mt-4">
+    <div class="row mb-4">
+      <div class="col">
+        <h1 class="display-4 text-primary">Wellness Programs</h1>
+      </div>
+      <div class="col text-right">
+        <!-- Add button for opening the dialog to add new Wellness Program -->
+        <button mat-raised-button color="primary" class="btn btn-primary btn-lg shadow" (click)="openDialog()">Add New Program</button>
+      </div>
+    </div>
+  
+    <div class="table-responsive">
+      <table mat-table [dataSource]="dataSource" class="table table-striped table-hover">
+  
+        <!-- ID Column -->
+        <ng-container matColumnDef="programID">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.programID}} </td>
+        </ng-container>
+  
+        <!-- Program Name Column -->
+        <ng-container matColumnDef="wellnessProgramName">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> Program Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.wellnessProgramName}} </td>
+        </ng-container>
+  
+        <!-- Start Date Column -->
+        <ng-container matColumnDef="wellnessProgramStartDate">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> Start Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.wellnessProgramStartDate | date}} </td>
+        </ng-container>
+  
+        <!-- End Date Column -->
+        <ng-container matColumnDef="wellnessProgramEndDate">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> End Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.wellnessProgramEndDate | date}} </td>
+        </ng-container>
+  
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> Category </th>
+          <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+  
+        <!-- Description Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+  
+        <!-- Instructor Name Column -->
+        <ng-container matColumnDef="instructorName">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> Instructor Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.instructorName}} </td>
+        </ng-container>
+  
+        <!-- Status Column -->
+        <ng-container matColumnDef="wellnessProgramStatus">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.wellnessProgramStatus}} </td>
+        </ng-container>
+  
+        <!-- Action Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="bg-primary text-white"> Actions </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button color="accent" class="btn btn-warning btn-sm" (click)="editProgram(element)">Edit</button>
+            <button mat-button color="warn" class="btn btn-danger btn-sm" (click)="deleteProgram(element.programID)">Delete</button>
+          </td>
+        </ng-container>
+  
+        <!-- Table Header and Rows -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,59 @@
+/* Dialog header styling */
+.dialog-header {
+    font-size: 24px;
+    font-weight: 500;
+    color: #3f51b5; /* Primary color (blue) for header text */
+    text-align: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
+  }
+  
+  /* Dialog body styling */
+  .dialog-body {
+    font-size: 16px;
+    color: #555;
+    background-color: #fafafa;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  /* Emphasized event name */
+  .dialog-description strong {
+    color: #ff5722; /* Highlighted orange for the event name */
+    font-weight: 600;
+  }
+  
+  /* Action button container */
+  .dialog-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  /* Cancel button styling */
+  .cancel-btn {
+    color: #757575;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Enroll button styling */
+  .enroll-btn {
+    font-weight: 600;
+    background-color: #3f51b5; /* Primary blue */
+    color: white;
+    padding: 6px 16px;
+  }
+  
+  .enroll-btn:hover {
+    background-color: #303f9f; /* Darker blue on hover */
+  }
+  

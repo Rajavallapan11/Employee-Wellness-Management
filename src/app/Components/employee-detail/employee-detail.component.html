@@ -1,0 +1,110 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Employee Details</h2>
+
+    <div *ngIf="employee;">
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Employee ID:</strong> {{ employee.employeeId }}</li>
+        <li class="list-group-item"><strong>Name:</strong> {{ employee.name }}</li>
+        <li class="list-group-item"><strong>Role:</strong> {{ employee.role }}</li>
+        <li class="list-group-item"><strong>Contact Number:</strong> {{ employee.contactNumber }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ employee.email }}</li>
+        <li class="list-group-item"><strong>Age:</strong> {{ employee.age }}</li>
+        <li class="list-group-item"><strong>Gender:</strong> {{ employee.gender }}</li>
+        <li class="list-group-item"><strong>Blood Group:</strong> {{ employee.bloodgroup }}</li>
+        <li class="list-group-item"><strong>BMI:</strong> {{ employee.bmi }}</li>
+        <li class="list-group-item"><strong>Hobbies:</strong> {{ employee.hobbies }}</li>
+        <li class="list-group-item"><strong>Department:</strong> {{ employee.department }}</li>
+      </ul>
+
+      <div class="container mt-4">
+        <h2 class="text-center mb-4">Enroll Details</h2>
+      
+        <div *ngIf="employee; else errorTemplate">
+          <!-- Wellness Enrollments Table -->
+          <h4 class="mt-4">Wellness Enrollments</h4>
+          <div *ngIf="employee.wellnessEnrollments && employee.wellnessEnrollments.length > 0; else noPrograms">
+            <table class="table table-bordered table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Program Name</th>
+                  <th>Program Description</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let enrollment of employee.wellnessEnrollments">
+                  <td>{{ enrollment.wellnessProgram.wellnessProgramName }}</td>
+                  <td>{{ enrollment.wellnessProgram.description }}</td>
+                  <td>{{ enrollment.wellnessProgram.wellnessProgramStartDate | date }}</td>
+                  <td>{{ enrollment.wellnessProgram.wellnessProgramEndDate | date }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <ng-template #noPrograms>
+            <div class="alert alert-info">No wellness programs enrolled.</div>
+          </ng-template>
+      
+          <!-- Participation in Challenges Table -->
+          <h4 class="mt-4">Participation in Challenges</h4>
+          <div *ngIf="employee.challengeparticipation && employee.challengeparticipation.length > 0; else noChallenges">
+            <table class="table table-bordered table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Challenge Name</th>
+                  <th>Description</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let participation of employee.challengeparticipation">
+                  <td>{{ participation.challenge.challengeName }}</td>
+                  <td>{{ participation.challenge.description }}</td>
+                  <td>{{ participation.challenge.challengeStartDate | date }}</td>
+                  <td>{{ participation.challenge.challengeEndDate | date }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <ng-template #noChallenges>
+            <div class="alert alert-info">No challenges participated in.</div>
+          </ng-template>
+      
+          <!-- Event Registrations Table -->
+          <h4 class="mt-4">Event Registrations</h4>
+          <div *ngIf="employee.eventregistration && employee.eventregistration.length > 0; else noEvents">
+            <table class="table table-bordered table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Event Name</th>
+                  <th>Description</th>
+                  <th>Event Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let registration of employee.eventregistration">
+                  <td>{{ registration.event.eventName }}</td>
+                  <td>{{ registration.event.description}}</td>
+                  <td>{{ registration.event.eventDate }}</td>
+                  <td>{{ registration.event.eventStatus }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <ng-template #noEvents>
+            <div class="alert alert-info">No events registered.</div>
+          </ng-template>
+        </div>
+      
+        <ng-template #errorTemplate>
+          <div class="alert alert-danger">Error: Employee details not available.</div>
+        </ng-template>
+      </div>
+      
+</div>

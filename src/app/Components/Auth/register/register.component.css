@@ -1,0 +1,92 @@
+/*Apply background image to the body */
+body {
+  background: url('../../../../assets/5.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Cover the whole page */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repetition */
+  min-height: 100vh; /* Ensure the body takes up full height */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styling to ensure the form is visible */
+.register-container {
+  max-width: 600px;
+  margin: 4rem auto; /* Center form */
+  background-color: rgba(255, 252, 252, 0); /* Slightly transparent background for readability */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Form heading */
+.card h2 {
+  font-size: 1.75rem; /* Larger heading */
+  color: #333; /* Dark text color */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Alert messages */
+.alert {
+  border-radius: 0.25rem; /* Rounded corners for alerts */
+  margin-bottom: 1rem; /* Space below alert */
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 1rem; /* Space between form groups */
+}
+
+/* Labels */
+.form-label {
+  font-weight: 500; /* Medium weight */
+  color: #dd3434; /* Darker gray */
+}
+
+/* Form control styling */
+.form-control, .form-select {
+  border-radius: 0.25rem; /* Rounded corners */
+  border: 1px solid #fbfcfd81; /* Light border color */
+  padding: 0.75rem; /* Padding inside inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Light blue shadow */
+}
+
+/* Error messages */
+.text-danger {
+  font-size: 0.875rem; /* Slightly smaller font size */
+  margin-top: 0.25rem; /* Space above error messages */
+}
+
+/* Submit button */
+.btn-primary {
+  background-color: #007bff; /* Bootstrap primary color */
+  border-color: #007bff; /* Matching border color */
+  padding: 0.75rem; /* Padding inside the button */
+  border-radius: 0.25rem; /* Rounded corners */
+  font-size: 1rem; /* Larger font size */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  border-color: #004085; /* Darker border on hover */
+}
+
+/* Link styling */
+a {
+  color: #007bff; /* Link color */
+  font-weight: 500; /* Medium weight for links */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  color: #0056b3; /* Darker shade on hover */
+  text-decoration: underline; /* Underline on hover */
+}

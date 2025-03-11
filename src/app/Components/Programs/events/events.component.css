@@ -1,0 +1,52 @@
+/* src/app/wellness-program/wellness-program.component.css */
+
+/* Apply a global font style to the body */
+body {
+    font-family: 'Arial', sans-serif; /* Default font family for the page */
+    font-size: 16px; /* Default font size for the page */
+    color: #333; /* Default text color */
+}
+
+.container {
+    background-color: #f4f4f4;
+    padding: 20px; /* Ensure some padding for the content */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.9); /* Light background for table to ensure text readability */
+    font-family: 'Verdana', sans-serif; /* Font for table content */
+}
+
+th, td {
+    border: 1px solid #1a1b1a;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px; /* Font size for table cells */
+}
+
+th {
+    background-color: #fababa;
+    font-weight: bold; /* Bold font for table headers */
+}
+
+button {
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif; /* Font for buttons */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Example for applying font styles to headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif; /* Font for all headings */
+}

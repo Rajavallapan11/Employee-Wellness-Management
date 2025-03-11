@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Employee Details</h2>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover shadow-sm rounded">
+      <thead class="thead-dark">
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Contact Number</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Blood Group</th>
+          <th>BMI</th>
+          <th>Hobbies</th>
+          <th>Department</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.employeeId }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.role }}</td>
+          <td>{{ employee.contactNumber }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.age }}</td>
+          <td>{{ employee.gender }}</td>
+          <td>{{ employee.bloodgroup }}</td>
+          <td>{{ employee.bmi }}</td>
+          <td>{{ employee.hobbies }}</td>
+          <td>{{ employee.department }}</td>
+          <td>
+            <div class="action-buttons">
+              <!-- Edit Button -->
+              <button class="btn btn-outline-primary btn-sm" (click)="openModal(employee)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <!-- Delete Button -->
+              <button class="btn btn-outline-danger btn-sm" (click)="deleteEmployee(employee.employeeId)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

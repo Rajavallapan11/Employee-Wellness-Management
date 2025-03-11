@@ -1,0 +1,70 @@
+/* Sidebar container */
+.sidebar {
+    width: 236px;
+    background-color: #343a40; /* Dark background */
+    color: #ffffff;
+    position: fixed;
+    top: 0;;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(37, 16, 230, 0.1) !important; /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Sidebar header */
+.sidebar .navbar {
+    padding: 1rem;
+    border-bottom: 1px solid #495057; /* Divider line */
+}
+
+/* Sidebar toggler button */
+.sidebar .navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+/* Custom toggler icon */
+.sidebar .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list" viewBox="0 0 16 16"><path d="M2 3h12a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 4h12a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm0 4h12a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/></svg>');
+}
+
+/* Sidebar links styling */
+.sidebar .nav-link {
+    color: #ffffff;
+    font-weight: 500; /* Medium weight text */
+    padding: 1rem;
+    border-radius: 0.25rem; /* Rounded corners for links */
+    transition: background-color 0.3s ease, padding-left 0.3s ease; /* Smooth transitions */
+}
+
+.sidebar .nav-link:hover {
+    background-color: #ad92eb; /* Darker background on hover */
+    padding-left: 1.5rem; /* Indentation effect on hover */
+}
+
+/* Add a gradient background for the sidebar */
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 70%);
+    z-index: -1;
+}
+
+/* Hide sidebar on mobile by default */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        box-shadow: none; /* Remove shadow on mobile */
+    }
+
+    .sidebar .nav-link {
+        padding: 1rem 0.75rem; /* Adjust padding for mobile */
+    }
+}

@@ -1,0 +1,81 @@
+/* src/app/wellness-program/wellness-program.component.css */
+
+/* Apply a global font style to the body */
+body {
+    font-family: 'Arial', sans-serif; /* Default font family for the page */
+    font-size: 16px; /* Default font size for the page */
+    color: #333; /* Default text color */
+}
+
+/* Container styling */
+.container {
+    background-color: #f4f4f4;
+    padding: 20px; /* Ensure some padding for the content */
+    border-radius: 8px; /* Optional: Add rounded corners for better appearance */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* Solid background for better contrast */
+    font-family: 'Verdana', sans-serif; /* Font for table content */
+}
+
+/* Table header and cell styling */
+th, td {
+    border: 1px solid #ddd; /* Lighter border for better visibility */
+    padding: 12px; /* Increase padding for better readability */
+    text-align: left;
+    font-size: 14px; /* Font size for table cells */
+}
+
+/* Table header specific styling */
+th {
+    background-color: #fababa;
+    font-weight: bold; /* Bold font for table headers */
+}
+
+/* Button styling */
+button {
+    border: none;
+    padding: 8px 16px; /* Slightly larger padding for better click area */
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif; /* Font for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Example for applying font styles to headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif; /* Font for all headings */
+    color: #333; /* Ensure headings have good contrast */
+    margin-bottom: 16px; /* Space below headings for better separation */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        display: block;
+        text-align: left;
+    }
+
+    button {
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+    }
+}

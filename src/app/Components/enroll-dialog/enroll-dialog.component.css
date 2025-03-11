@@ -1,0 +1,40 @@
+.dialog-content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.dialog-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.dialog-image {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.dialog-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: adds rounded corners to the image */
+}
+
+.dialog-text {
+  flex: 2;
+}
+
+.dialog-text p {
+  margin: 0;
+}
+
+/* Optional: Style buttons for a more modern look */
+button.mat-button {
+  margin: 0 8px;
+  border-radius: 4px;
+}
+
+button.mat-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}

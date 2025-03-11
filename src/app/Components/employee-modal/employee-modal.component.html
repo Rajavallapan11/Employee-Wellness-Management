@@ -1,0 +1,105 @@
+<h1 mat-dialog-title class="modal-header">{{ employee.employeeId ? 'Edit Employee' : 'Add Employee' }}</h1>
+<div mat-dialog-content class="modal-body">
+  <form>
+    <div class="row">
+      <!-- Employee Name Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="employee.name" name="name" required>
+        </mat-form-field>
+      </div>
+
+      <!-- Conditional Password Field for Add Employee -->
+      <div class="col-md-6" *ngIf="!employee.employeeId">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Password</mat-label>
+          <input matInput [(ngModel)]="employee.password" name="password" type="password">
+        </mat-form-field>
+      </div>
+
+      <!-- Contact Number Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Contact Number</mat-label>
+          <input matInput [(ngModel)]="employee.contactNumber" name="contactNumber" type="number" required>
+        </mat-form-field>
+      </div>
+
+      <!-- Email Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="employee.email" name="email" type="email" required>
+        </mat-form-field>
+      </div>
+
+      <!-- Age Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Age</mat-label>
+          <input matInput [(ngModel)]="employee.age" name="age" required>
+        </mat-form-field>
+      </div>
+
+      <!-- Gender Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Gender</mat-label>
+          <mat-select [(ngModel)]="employee.gender" name="gender">
+            <mat-option *ngFor="let gender of [Gender.MALE, Gender.FEMALE]" [value]="gender">
+              {{ gender }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Blood Group Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Blood Group</mat-label>
+          <input matInput [(ngModel)]="employee.bloodgroup" name="bloodgroup">
+        </mat-form-field>
+      </div>
+
+      <!-- BMI Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>BMI</mat-label>
+          <input matInput [(ngModel)]="employee.bmi" name="bmi" type="number" step="0.01">
+        </mat-form-field>
+      </div>
+
+      <!-- Hobbies Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Hobbies</mat-label>
+          <input matInput [(ngModel)]="employee.hobbies" name="hobbies">
+        </mat-form-field>
+      </div>
+
+      <!-- Department Field -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Department</mat-label>
+          <input matInput [(ngModel)]="employee.department" name="department">
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Role</mat-label>
+          <mat-select [(ngModel)]="employee.role" name="gender">
+            <mat-option *ngFor="let role of [Role.ROLE_ADMIN]" [value]="role">
+              {{ role }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="modal-footer">
+  <button mat-button (click)="dialogRef.close()" class="btn btn-secondary">Cancel</button>
+  <button mat-button color="danger" (click)="save()" class="btn btn-primary">Save</button>
+</div>

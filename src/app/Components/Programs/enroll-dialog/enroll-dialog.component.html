@@ -1,0 +1,13 @@
+<h1 mat-dialog-title class="dialog-header">Enroll in Event</h1>
+
+<div mat-dialog-content class="dialog-body">
+  <p class="dialog-description">
+    Are you sure you want to enroll in the event 
+    <strong>{{ data.programName }}</strong>?
+  </p>
+</div>
+
+<div mat-dialog-actions class="dialog-footer">
+  <button mat-button (click)="onNoClick()" class="cancel-btn">Cancel</button>
+  <button mat-raised-button color="primary" (click)="enroll()" class="enroll-btn">Enroll</button>
+</div>
